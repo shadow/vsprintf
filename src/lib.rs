@@ -16,7 +16,7 @@ pub unsafe fn vsprintf<V>(format: *const c_char, va_list: *mut V) -> Result<Stri
 }
 
 /// Prints a format string into a list of raw bytes that form
-/// a null-terminated C string.
+/// a non-null-terminated list of bytes.
 pub unsafe fn vsprintf_raw<V>(format: *const c_char, va_list: *mut V) -> Result<Vec<u8>> {
     let list_ptr = va_list as *mut c_void;
 
